@@ -1,0 +1,60 @@
+body { 
+  padding-top: 70px; 
+}
+
+a:link, a:hover, a:active, a: {
+  color: black;
+}
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.green-banner {
+  width: 40%;
+  height: 40%;
+  margin: 0 auto;
+}
+
+.panel {
+  width: 85%;
+  margin: 0 auto;
+  font-size: 1.5em;
+}
+
+.paragraph {
+  margin: 5% 5%;
+  font-size: 1.5em;
+}
+
+.number {
+  color: red;
+  font-weight: bold;
+}
+
+.nav-container {
+  margin: 5% 5%;
+}
+
+.char {
+  width: 30%;
+  height: 40%;
+  float: left;
+  margin: 0 0 10px 10px;
+}
+
+.bio {
+  float: right;
+  margin: 0 0 10px 10px;
+  font-size: 1.25em;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+ul {
+  list-style-type: none;
+}
