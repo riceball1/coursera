@@ -1,0 +1,143 @@
+This is some code to be used later:
+
+<!-- modal -->
+  <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- end of modal-->
+
+
+
+
+<!-- modal template -->
+
+<script id="modal-template" type="text/x-handlebars-template">
+<div class="row">
+<!-- modal -->
+  <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-md animal-button" data-toggle="modal" data-target="#myModal">What is a {{name}} ?</button>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    {{#each category}}
+      {{#each animals}}
+    <div class="modal-content">
+      <div class="modal-header" data-id="{{@index}}">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+        <h4 class="modal-title">{{name}}</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{description}}</p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        {{/each}}
+      {{/each}}
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- end of modal-->
+</div>
+</script>
+
+
+<!-- end of modal template -->
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" data-id="{{@index}}">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+        <h4 class="modal-title">Animal</h4>
+        </div>
+        <div class="modal-body">
+          <p>Description</p>
+        </div>
+        
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+
+<!-- end of modal-->
+
+
+
+
+<!-- to display a modal by listening for a button action -->
+  $('.btn').click(function(){
+    var index = $(this).data("id");
+
+    current_description = category.animals[index];
+
+    showTemplate(modal_template, current_description);
+  });
+
+<!-- end of modal click event -->
+
+
+/********** modal template *******/
+// doesn't work
+
+<!-- modal template -->
+<script id="modal-template" type="text/x-handlebars-template">
+  {{#each category}}
+    {{#each animals}}
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" data-id="{{@index}}">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+        <h4 class="modal-title">{{name}}</h4>
+        </div>
+        <div class="modal-body">
+          <p>{{description}}</p>
+        </div>
+        
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    {{/each}}
+   {{/each}}
+    </div>
+
+</script>
+<!-- end of modal template -->
+
+/****** end of modal ********/

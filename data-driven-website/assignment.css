@@ -1,0 +1,36 @@
+/* put your css code here */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bigger-text {
+  font-size: 1.75em;
+  color: gray;
+}
+
+
+h3, h2 {
+  color: #00BFFF;
+}
+
+h1 {
+  font-size: 2.5em;
+
+}
+
+
+.tab {
+  font-size: 1.75em;
+  color: #00BFFF;
+  background-color: #DCDCDC;
+}
+
+
+.small-image {
+  width: 60%;
+  height: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
