@@ -1,7 +1,33 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
-    margin: 20px;
     font-family: 'Raleway', sans-serif;
+    margin-bottom: 60px;
     h1 {
         font-family: 'Playfair Display', serif;
     }
+    .description {
+        width: 40%;
+        height: 30%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .navbar {
+        border-bottom: 10px solid @litgray;
+        .navbar-right {
+            margin-right: 10px;
+        }
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*fixed height of footer */
+    height: 60px;
+    background-color: @litgray;
 }

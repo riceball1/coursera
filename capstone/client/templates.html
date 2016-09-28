@@ -1,6 +1,6 @@
 <!-- top level template for the nav bar -->
 <template name="navbar">
-    <nav class="navbar navbar-default">
+    <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">
@@ -8,7 +8,7 @@
       </a>
             </div>
             <div class="nav navbar-right">
-                {{> loginButtons}}
+                {{> loginButtons align="right"}}
             </div>
         </div>
     </nav>
@@ -16,7 +16,7 @@
 <!-- main page -->
 <template name="home">
     <h1 class="text-center">How Can I Use _____ ?</h1>
-    <div class="container">
+    <div class="description">
         <p>This website is about how to use natural resources in the house to create minimal waste.</p>
     </div>
 </template>
