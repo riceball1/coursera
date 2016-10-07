@@ -36,8 +36,8 @@ Template.searchBox.events({
 /*** OTHER FUNCTIONS ***/ //
 
 Template.home.events({
-    "click .js-info-popout": function(e) {
-        console.log("You just clicked for more info");
+    "mouseenter .js-info-popout": function(e) {
+        console.log("You wanted more info, here you go!");
         $('.description').slideToggle('slow', function() {
             $('.description').css('transition', 'background-color 5s');
             $('.description').css('background-color', 'lightgray');

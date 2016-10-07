@@ -24,14 +24,19 @@
         {{> yield "nav"}}
     </nav>
     <div class="container-fluid">
-        <div>
-            {{> yield "metadata"}}
+        <div row>
+            <div>
+                {{> yield "metadata"}}
+            </div>
+            <div>
+                {{> yield "main"}}
+            </div>
+            <div>
+                {{> yield "results"}}
+            </div>
+            <footer>
+                {{> yield "footer"}}
+            </footer>
         </div>
-        <div>
-            {{> yield "main"}}
-        </div>
-        <footer>
-            {{> yield "footer"}}
-        </footer>
     </div>
 </template>

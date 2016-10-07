@@ -7,5 +7,6 @@ Router.route('/', function() {
     console.log("Setting Up!");
     this.render("navbar", { to: "nav" });
     this.render("home", { to: "main" });
+    this.render("results-page", { to: "results" });
     this.render("foot", { to: "footer" });
 });

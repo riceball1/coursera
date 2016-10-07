@@ -23,21 +23,20 @@
 <template name="home">
     <span class="glyphicon glyphicon-info-sign js-info-popout"></span>
     <div class="description">
-        <p>This website is about finding multipurpose uses for natural resources in the house to minimize waste.</p>
+        <p>This website is about finding multipurpose uses for natural household items in order to minimize waste.</p>
     </div>
     <h1 class="text-center">How Can I Use</h1>
     <div class="search">
         <div>{{>searchBox}}</div>
-        <div> {{> searchResult}} </div>
     </div>
 </template>
-<!-- footer-->
-<template name="foot">
-    <footer>2016 &copy; Dana Ng</footer>
-</template>
 <!-- search -->
+<template name="results-page">
+    <div> {{> searchResult}} </div>
+</template>
 <template name="searchResult">
     <div id='search-result'>
+        <p>This is what we found out for the item you typed in:</p>
         <div id="search-meta">
             {{#if isLoading}} searching ... {{/if}}
         </div>
@@ -55,4 +54,8 @@
 </template>
 <template name="searchBox">
     <input class="text-center" type="text" id="search-box" placeholder=" type item here " />
+</template>
+<!-- footer-->
+<template name="foot">
+    <footer>2016 &copy; Dana Ng</footer>
 </template>
