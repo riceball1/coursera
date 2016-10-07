@@ -3,24 +3,56 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
                 <a class="navbar-brand" href="/">
-        Minimal Waste
+        Multipurpose Living
       </a>
             </div>
-            <div class="nav navbar-right">
-                {{> loginButtons align="right"}}
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav navbar-right
+">
+                    <li>{{> loginButtons align="right"}}</li>
+                </ul>
             </div>
         </div>
     </nav>
 </template>
 <!-- main page -->
 <template name="home">
-    <h1 class="text-center">How Can I Use _____ ?</h1>
+    <span class="glyphicon glyphicon-info-sign js-info-popout"></span>
     <div class="description">
-        <p>This website is about how to use natural resources in the house to create minimal waste.</p>
+        <p>This website is about finding multipurpose uses for natural resources in the house to minimize waste.</p>
+    </div>
+    <h1 class="text-center">How Can I Use</h1>
+    <div class="search">
+        <div>{{>searchBox}}</div>
+        <div> {{> searchResult}} </div>
     </div>
 </template>
 <!-- footer-->
 <template name="foot">
     <footer>2016 &copy; Dana Ng</footer>
+</template>
+<!-- search -->
+<template name="searchResult">
+    <div id='search-result'>
+        <div id="search-meta">
+            {{#if isLoading}} searching ... {{/if}}
+        </div>
+        {{#each getPackages}}
+        <div class="package">
+            <h4 class="name">
+        <a href="{{git}}" target="_blank">{{{packageName}}}</a>
+      </h4>
+            <div class="description">
+                {{{description}}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</template>
+<template name="searchBox">
+    <input class="text-center" type="text" id="search-box" placeholder=" type item here " />
 </template>

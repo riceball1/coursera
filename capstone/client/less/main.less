@@ -1,0 +1,64 @@
+@import 'colors.less';
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    // margin-bottom: 60px;
+    a,
+    p {
+        color: @coral;
+    }
+    .glyphicon-info-sign {
+        font-size: 1.5em;
+        color: @coral;
+    }
+    h1 {
+        font-family: 'Raleway', serif;
+    }
+    .description {
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        align: left;
+        padding: 10px;
+        margin: 10px;
+        display: none;
+        border-radius: 15px;
+    }
+    .navbar {
+        border-bottom: 10px solid @litgray;
+        .navbar-right {
+            margin-right: 10px;
+        }
+        .glyphicon {
+            color: @coral;
+        }
+    }
+}
+
+.search {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#search-box {
+    border-radius: 30px;
+    width: 80%;
+    height: 100px;
+    font-size: 2em;
+    outline: 0;
+}
+
+footer {
+    // position: absolute;
+    // bottom: 0;
+    // width: 100%;
+    // /*fixed height of footer */
+    // height: 60px;
+    background-color: @litgray;
+    text-align: center;
+    padding: 15px;
+}
