@@ -27,12 +27,35 @@
     <div class="searchBar">
         <h1>How Can I Use</h1>
         <form class="searchItem">
-            <input name="search" type="search" placeholder="type your item here">
+            <input name="text" type="text" placeholder="Type your item here">
         </form>
   </div>
+  <div class="resultspage">
+    {{> results}}
+  </div>
 </template>
-<!-- search -->
+<!-- results -->
+<template name="results">
+    <div>
+        <table style="width:100%">
+        <tr>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Created Date</th>
+            <th>Author</th>
+        </tr>
+        {{#each displayItems}}
+            <tr>
+                <td>{{itemName}}</td>
+                <td>{{description}}</td>
+                <td>{{createdOn}}</td>
+                <td>{{createdBy}}</td>
 
+            </tr>
+        {{/each}}
+        </table>
+    </div>
+</template>
 <!-- footer-->
 <template name="foot">
     <footer>2016 &copy; Dana Ng</footer>

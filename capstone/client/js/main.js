@@ -1,5 +1,16 @@
+/**** HELPERS ***/
 
-/*** EVENTS ***/ //
+Template.results.helpers({
+	'displayItems': function() {
+		return Items.find();
+	}
+});
+
+
+
+
+
+/*** EVENTS ***/
 
 Template.navbar.events({
     "mouseenter .js-info-popout": function(e) {
@@ -17,10 +28,11 @@ Template.home.events({
 		const target = event.target;
 		const text = target.text.value;
 
-		// Find item in the collection
-		// Meteor.call('name');
+		// Use value to search db for a matching page
+		Meteor.call('findItem', text);
+		console.log("This is what you typed: " + text);
 
 		//Clear form
 		target.text.value = '';
-	}
+	},
 });

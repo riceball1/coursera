@@ -32,9 +32,4 @@ Meteor.startup(() => {
 });
 
 
-// Messsages._ensureIndex({
-//     "title": "text",
-//     "value": "text"
-// });
-
 
