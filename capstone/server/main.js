@@ -1,28 +1,40 @@
 import { Meteor } from 'meteor/meteor';
 
+
+
 Meteor.startup(() => {
-    // code to run on server at startup
-    SearchSource.defineSource('packages', function(searchText, options) {
-        var options = { sort: { isoScore: -1 }, limit: 20 };
 
-        if (searchText) {
-            var regExp = buildRegExp(searchText);
-            var selector = {
-                $or: [
-                    { packageName: regExp },
-                    { description: regExp }
-                ]
-            };
-
-            return Packages.find(selector, options).fetch();
-        } else {
-            return Packages.find({}, options).fetch();
-        }
-    });
-
-    function buildRegExp(searchText) {
-        // this is a dumb implementation
-        var parts = searchText.trim().split(/[ \-\:]+/);
-        return new RegExp("(" + parts.join('|') + ")", "ig");
+    if (!Items.findOne()) {
+        console.log("No data yet. Creating starter data.");
+        Items.insert({
+            itemName: "baking soda",
+            description: "Description goes here.",
+            createdOn: new Date(),
+            createdBy: "Unknown",
+            up: 0,
+            down: 0
+        }, {
+            itemName: "vinegar",
+            description: "Description goes here.",
+            createdOn: new Date(),
+            createdBy: "Unknown",
+            up: 0,
+            down: 0
+        }, {
+            itemName: "salt",
+            description: "Description goes here.",
+            createdOn: new Date(),
+            createdBy: "Unknown",
+            up: 0,
+            down: 0
+        }, );
     }
 });
+
+
+// Messsages._ensureIndex({
+//     "title": "text",
+//     "value": "text"
+// });
+
+

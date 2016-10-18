@@ -1,46 +1,26 @@
-/**** SEARCH ****/
-var options = {
-    keepHistory: 1000 * 60 * 5,
-    localSearch: true
-};
-var fields = ['packageName', 'description'];
 
-PackageSearch = new SearchSource('packages', fields, options);
+/*** EVENTS ***/ //
 
-// HELPERS
-Template.searchResult.helpers({
-    getPackages: function() {
-        return PackageSearch.getData({
-            transform: function(matchText, regExp) {
-                return matchText.replace(regExp, "<b>$&</b>")
-            },
-            sort: { isoScore: -1 }
-        });
-    },
-
-    isLoading: function() {
-        return PackageSearch.getStatus().loading;
-    }
-});
-
-// EVENTS
-
-Template.searchBox.events({
-    "keyup #search-box": _.throttle(function(e) {
-        var text = $(e.target).val().trim();
-        PackageSearch.search(text);
-    }, 200)
-});
-
-
-/*** OTHER FUNCTIONS ***/ //
-
-Template.home.events({
+Template.navbar.events({
     "mouseenter .js-info-popout": function(e) {
         console.log("You wanted more info, here you go!");
-        $('.description').slideToggle('slow', function() {
-            $('.description').css('transition', 'background-color 5s');
-            $('.description').css('background-color', 'lightgray');
-        });
+        $('.description').toggle(900);
     }
-})
+});
+
+Template.home.events({
+	'submit .searchItem'(event) {
+		// Prevent default browser form submit
+		event.preventDefault();
+
+		// Get value from form element
+		const target = event.target;
+		const text = target.text.value;
+
+		// Find item in the collection
+		// Meteor.call('name');
+
+		//Clear form
+		target.text.value = '';
+	}
+});
