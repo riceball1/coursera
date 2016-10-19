@@ -8,7 +8,7 @@ Router.route('/', function() {
 	// use the template named ApplicationLayout
 	this.layout('ApplicationLayout');
 
-    console.log("Setting Up!");
+    console.log("Landing Page!");
     this.render("navbar", { to: "nav" });
     this.render("home", { to: "main" });
     this.render("foot", { to: "footer" });
