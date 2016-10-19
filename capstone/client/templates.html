@@ -30,14 +30,8 @@
             <input name="text" type="text" placeholder="Type your item here">
         </form>
   </div>
-  <div class="resultspage">
-    {{> results}}
-  </div>
-</template>
-<!-- results -->
-<template name="results">
-    <div>
-        <table style="width:100%">
+ <div class="resultspage">
+        <table style="width:80%">
         <tr>
             <th>Item Name</th>
             <th>Description</th>
@@ -46,7 +40,7 @@
         </tr>
         {{#each displayItems}}
             <tr>
-                <td>{{itemName}}</td>
+                <td><a href="/item/{{_id}}">{{itemName}}</a></td>
                 <td>{{description}}</td>
                 <td>{{createdOn}}</td>
                 <td>{{createdBy}}</td>
@@ -56,6 +50,20 @@
         </table>
     </div>
 </template>
+<!-- results page -->
+<template name="itemPage">
+    {{> navbar}}
+    {{> home}}
+    <div>
+        <h2>Item Name: {{itemName}}</h2>
+        <p>{{description}}</p>
+        <p>{{createdOn}}</p>
+        <p>{{createdBy}}</p>
+    </div>
+    <a href="/"><button>Home</button></a>
+    {{> foot}}
+</template>
+
 <!-- footer-->
 <template name="foot">
     <footer>2016 &copy; Dana Ng</footer>

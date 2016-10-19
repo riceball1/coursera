@@ -1,6 +1,6 @@
 /**** HELPERS ***/
 
-Template.results.helpers({
+Template.home.helpers({
 	'displayItems': function() {
 		return Items.find();
 	}

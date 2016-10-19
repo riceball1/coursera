@@ -16,4 +16,13 @@ Router.route('/', function() {
 
 
 
-//Results page 
+//Individual Item Page
+
+Router.route('/item/:_id', {
+	template: "itemPage",
+	data: function(){
+		var currentList = this.params._id;
+		return Items.findOne({_id: currentList});
+	}
+	
+});
