@@ -1,4 +1,4 @@
 // publish collection
-Meteor.publish('items', function() {
-    return Items.find();
+Meteor.publish('items', function itemsPublication() {
+    return Items.find({});
 });
