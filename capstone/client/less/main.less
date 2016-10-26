@@ -29,19 +29,29 @@ body {
         padding: 10px;
         float: left;
     }
-    .description {
+    div.description {
         position: absolute;
-        width: 200px;
-        height: 200px;
+        width: 400px;
+        height: auto;
         align: left;
         padding: 10px;
         margin-top: 40px;
         display: none;
         border-radius: 5px;
         float: left;
-        border: 1px solid #ddd;
-        background-color: white;
+        border: 3px solid @coral;
+        background-color: @litgray;
         font-size: 15px;
+        p {
+            color: black;
+        }
+        .close-desc {
+            padding: 10px 0px 0px 0px;
+            left: 350px;
+            &:hover {
+                color: black;
+            }
+        }
     }
     .navbar {
         border-bottom: 10px solid @litgray;
@@ -49,7 +59,8 @@ body {
             margin-right: 10px;
         }
         .glyphicon {
-            color: black;
+            color: @coral;
+            font-size: 20px;
         }
     }
     .navbar-brand {
@@ -71,8 +82,56 @@ body {
     .loginBtn {
         padding: 5px;
     }
+    .jumbotron {
+        margin: 20px auto;
+        width: 80%;
+        h1 {
+            font-size: 25px;
+            text-align: center;
+        }
+        span {
+            color: red;
+        }
+    }
+
 }
 
+// Add New Item Form
+
+.js-open-form {
+    margin: 20px 5%;
+}
+
+.open-button {
+    color: yellow!important;
+}
+
+.newitem-form {
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 5px auto;
+    width: 800px;
+    display: none;
+    input {
+        width: 600px;
+        height: 50px;
+        padding: 5px;
+        font-size: 16px;
+    }
+    label {
+        font-size: 20px;
+    }
+}
+
+
+
+
+// Search Results
+
+.results-msg {
+    margin: 5px auto;
+    padding: 20px;
+}
 
 
 .searchBar {

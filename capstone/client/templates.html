@@ -4,10 +4,14 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="glyphicon glyphicon-heart"></span>
                 </button>
     <div class="description">
+        <span class="glyphicon glyphicon-remove close-desc"></span>
+        <h2>About</h2>
         <p>This website is about finding multipurpose uses for natural household items in order to minimize waste.</p>
+        <h2>Get Started</h2>
+        <p>Start your search by using "baking soda" or "vinegar". You can sign in by creating your own user account or use test@test.com and password: test123</p>
     </div>
                 <a class="navbar-brand" href="/">
         Multipurpose Living
@@ -22,6 +26,8 @@
         </div>
     </nav>
 </template>
+
+
 <!-- main page -->
 <template name="home">
     <div class="searchBar">
@@ -30,23 +36,46 @@
             <input name="text" type="text" placeholder="Type your item here">
         </form>
     </div>
-    <div class="results">
-        {{> resultsItem}}
+    {{#if currentUser}}
+    <div class="addData">
+        {{> addNewItem}}
     </div>
-    <!-- <div class="results container">
-        <div class="row">
-            <div class="col-xs-6">
-                <h1 class="name"></h1>
-                <p class="desc"></p>    
-            </div>
-            <div class="col-xs-6">
-                <img src="" alt="" class="itemImage">
-            </div>  
-        </div>  
-    </div> -->
+    <div class="results">
+        {{> resultsPage}}
+    </div>
+    {{else}}
+    <div class="jumbotron">
+        <h1>Please Sign In or Sign Up to start using this site <span class="glyphicon glyphicon-heart"></span></h1>
+    </div>
 
+    {{/if}}
 </template>
-<!-- results page -->
+
+
+<!-- Add New Item Form -->
+
+<template name="addNewItem">
+    <button class="btn btn-primary js-open-form">Add New Item</button>
+    <div class="newitem-form">
+        <form class="newItem">
+            <label>Item Name: </label><input type='text' placeholder="Type Item Name Here">
+            <label>Description: </label><input type='text' placeholder="Type Item Description Here">
+             <label>Image URL: </label><input type='text' placeholder="Add Image URL Here">
+        </form>
+        <button class="btn btn-success js-submit-form">Submit</button>
+    </div>
+</template>
+
+<template name="resultsPage">
+    <div class="results-msg">
+        <h1>This is where the results will appear.</h1>
+    </div>
+</template>
+
+
+
+
+<!-- ItemPage -->
 <template name="resultsItem">
     <div>
         <h2>{{itemName}}</h2>

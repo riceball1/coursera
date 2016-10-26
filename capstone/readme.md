@@ -14,6 +14,7 @@ In this course, you will develop more advanced web application programming skill
 - Full text search in Meteor https://www.okgrow.com/posts/guide-to-full-text-search-in-meteor
 - Use dynamic templates: https://themeteorchef.com/snippets/using-dynamic-templates/
 - Adding comments to Meteor app: http://joshowens.me/adding-comments-to-your-meteor-js-app/
+- Simple Search: https://themeteorchef.com/snippets/simple-search/
 
 TODO:
 
