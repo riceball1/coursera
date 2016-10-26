@@ -10,13 +10,14 @@ In this course, you will develop more advanced web application programming skill
 - iron:router
 - less
 
-
-
 ## Info for features:
 - Full text search in Meteor https://www.okgrow.com/posts/guide-to-full-text-search-in-meteor
+- Use dynamic templates: https://themeteorchef.com/snippets/using-dynamic-templates/
+- Adding comments to Meteor app: http://joshowens.me/adding-comments-to-your-meteor-js-app/
 
 TODO:
 
-1. Create a search
-2. Results page should allow clickable links to item page
-3. item page should allow comments (comments should save)
+1. Create a search (jQuery search - any better way?)
+2. Results page should allow clickable links to item page (render the resultsItem page?)
+3. Allow users to insert uses for the items  (use comments?)
+4. Allow users to vote on the best uses (stars?)

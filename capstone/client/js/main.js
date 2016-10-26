@@ -22,9 +22,6 @@ Template.home.events({
 		// Prevent default browser form submit
 		event.preventDefault();
 
-		// clear results
-
-
 		// Get value from form element
 		const target = event.target;
 		const text = (target.text.value).toLowerCase();
@@ -33,9 +30,13 @@ Template.home.events({
 			// $('.results').text((Items.findOne({itemName: text}));
 			var item_name = Items.findOne({itemName: text}).itemName;
 			var item_description = Items.findOne({itemName: text}).description;
+			var item_image = Items.findOne({itemName: text}).image;
+			var item_title = Items.findOne({itemName: text}).title;
 			
 			$('.name').text(item_name);
 			$('.desc').text(item_description);
+			$('.itemImage').attr("src", item_image);
+			$('.itemImage').toggle();
 			console.log("This is what you typed: " + text);
 		} else {
 			$('.name').text("Nothing was found.");
@@ -43,13 +44,7 @@ Template.home.events({
 			console.log("Nothing was found");
 			console.log(Items.find({itemName: text}).fetch().length);
 		}
-
-		// if (Items.find({itemName: text}).fetch() === []) {
-			
-		
-			
-
-
+ 
 		//Clear form
 		target.text.value = '';
 	},

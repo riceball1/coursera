@@ -6,13 +6,13 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
-                <span class="glyphicon glyphicon-info-sign js-info-popout"></span>
     <div class="description">
         <p>This website is about finding multipurpose uses for natural household items in order to minimize waste.</p>
     </div>
                 <a class="navbar-brand" href="/">
         Multipurpose Living
       </a>
+      <span class="glyphicon glyphicon-info-sign js-info-popout"></span>
             </div>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right loginBtn">
@@ -25,53 +25,35 @@
 <!-- main page -->
 <template name="home">
     <div class="searchBar">
-        <h1>How Can I Use</h1>
+        <h1>How Can I Use</h1> 
         <form class="searchItem">
             <input name="text" type="text" placeholder="Type your item here">
         </form>
-  </div>
-  <!-- <div class = "content-info">
-      <p>Issues I am dealing with: 1) Appending content needs to clear previous append</p>
-  </div> -->
-<!--  <div class="resultspage">
-        <table style="width:80%">
-        <tr>
-            <th>Item Name</th>
-            <th>Description</th>
-            <th>Created Date</th>
-            <th>Author</th>
-        </tr>
-        {{#each displayItems}}
-            <tr>
-                <td><a href="/item/{{_id}}">{{itemName}}</a></td>
-                <td>{{description}}</td>
-                <td>{{createdOn}}</td>
-                <td>{{createdBy}}</td>
-
-            </tr>
-        {{/each}}
-        </table>
-    </div> -->
-
-
-    <div class="results">
-        <h1 class="name"></h1>
-        <p class="desc"></p>        
     </div>
+    <div class="results">
+        {{> resultsItem}}
+    </div>
+    <!-- <div class="results container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h1 class="name"></h1>
+                <p class="desc"></p>    
+            </div>
+            <div class="col-xs-6">
+                <img src="" alt="" class="itemImage">
+            </div>  
+        </div>  
+    </div> -->
 
 </template>
 <!-- results page -->
-<template name="itemPage">
-    {{> navbar}}
-    {{> home}}
+<template name="resultsItem">
     <div>
-        <h2>Item Name: {{itemName}}</h2>
+        <h2>{{itemName}}</h2>
         <p>{{description}}</p>
         <p>{{createdOn}}</p>
         <p>{{createdBy}}</p>
     </div>
-    <a href="/"><button>Home</button></a>
-    {{> foot}}
 </template>
 
 <!-- footer-->
