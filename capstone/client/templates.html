@@ -4,8 +4,10 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                    <span class="glyphicon glyphicon-heart"></span>
-                </button>
+<!--                     <span class="glyphicon glyphicon-heart"></span>
+ -->                
+ {{> loginButtons}}
+ </button>
     <div class="description">
         <span class="glyphicon glyphicon-remove close-desc"></span>
         <h2>About</h2>
@@ -16,6 +18,7 @@
                 <a class="navbar-brand" href="/">
         Multipurpose Living
       </a>
+      <a href="search">Search</a>
       <span class="glyphicon glyphicon-info-sign js-info-popout"></span>
             </div>
             <div class="collapse navbar-collapse" id="menu">
@@ -37,18 +40,25 @@
         </form>
     </div>
     {{#if currentUser}}
-    <div class="addData">
-        {{> addNewItem}}
-    </div>
-    <div class="results">
-        {{> resultsPage}}
-    </div>
-    {{else}}
-    <div class="jumbotron">
-        <h1>Please Sign In or Sign Up to start using this site <span class="glyphicon glyphicon-heart"></span></h1>
-    </div>
-
+    <!-- need to find a way to display data-->
+        <div class="info-divs">
+            <div class="addData">
+                {{> addNewItem}}
+            </div>
+            <div class="results">
+                {{#if displayItems}}
+                <h2>Item Name: {{itemName}}</h2>
+                {{else}}
+                <h2>Nothing was found.</h2>
+                {{/if}}
+            </div>
+        </div>
+        {{else}}
+        <div class="jumbotron">
+            <h1>Please Sign In or Sign Up to start using this site <span class="glyphicon glyphicon-heart"></span></h1>
+        </div>
     {{/if}}
+
 </template>
 
 
@@ -66,11 +76,11 @@
     </div>
 </template>
 
-<template name="resultsPage">
+<!-- <template name="resultsPage">
     <div class="results-msg">
         <h1>This is where the results will appear.</h1>
     </div>
-</template>
+</template> -->
 
 
 
