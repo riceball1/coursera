@@ -1,36 +1,3 @@
-<!-- top level template for the nav bar -->
-<template name="navbar">
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-<!--                     <span class="glyphicon glyphicon-heart"></span>
- -->                
- {{> loginButtons}}
- </button>
-    <div class="description">
-        <span class="glyphicon glyphicon-remove close-desc"></span>
-        <h2>About</h2>
-        <p>This website is about finding multipurpose uses for natural household items in order to minimize waste.</p>
-        <h2>Get Started</h2>
-        <p>Start your search by using "baking soda" or "vinegar". You can sign in by creating your own user account or use test@test.com and password: test123</p>
-    </div>
-                <a class="navbar-brand" href="/">
-        Multipurpose Living
-      </a>
-      <a href="search">Search</a>
-      <span class="glyphicon glyphicon-info-sign js-info-popout"></span>
-            </div>
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav navbar-right loginBtn">
-                    <li>{{> loginButtons align="right"}}</li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</template>
-
-
 <!-- main page -->
 <template name="home">
     <div class="searchBar">
@@ -40,62 +7,33 @@
         </form>
     </div>
     {{#if currentUser}}
-    <!-- need to find a way to display data-->
         <div class="info-divs">
             <div class="addData">
                 {{> addNewItem}}
             </div>
-            <div class="results">
-                {{#if displayItems}}
-                <h2>Item Name: {{itemName}}</h2>
-                {{else}}
-                <h2>Nothing was found.</h2>
-                {{/if}}
+            <!-- display all data that relates to the search -->
+            <div class="search-results">
+                <ul>
+                {{each items}}
+                    <li>Item Name: <a href="{{_id}}">{{itemName}}</a></li>
+                {{/each}}
+                </ul>
             </div>
         </div>
         {{else}}
+        <!-- message that shows if not logged in -->
         <div class="jumbotron">
             <h1>Please Sign In or Sign Up to start using this site <span class="glyphicon glyphicon-heart"></span></h1>
         </div>
     {{/if}}
-
 </template>
 
 
-<!-- Add New Item Form -->
-
-<template name="addNewItem">
-    <button class="btn btn-primary js-open-form">Add New Item</button>
-    <div class="newitem-form">
-        <form class="newItem">
-            <label>Item Name: </label><input type='text' placeholder="Type Item Name Here">
-            <label>Description: </label><input type='text' placeholder="Type Item Description Here">
-             <label>Image URL: </label><input type='text' placeholder="Add Image URL Here">
-        </form>
-        <button class="btn btn-success js-submit-form">Submit</button>
-    </div>
-</template>
-
-<!-- <template name="resultsPage">
-    <div class="results-msg">
-        <h1>This is where the results will appear.</h1>
-    </div>
-</template> -->
 
 
 
 
-<!-- ItemPage -->
-<template name="resultsItem">
-    <div>
-        <h2>{{itemName}}</h2>
-        <p>{{description}}</p>
-        <p>{{createdOn}}</p>
-        <p>{{createdBy}}</p>
-    </div>
-</template>
 
-<!-- footer-->
-<template name="foot">
-    <footer>2016 &copy; Dana Ng</footer>
-</template>
+
+
+

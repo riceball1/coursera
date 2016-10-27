@@ -1,0 +1,28 @@
+<!-- top level template for the nav bar -->
+<template name="navbar">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">               
+                    {{> loginButtons}}
+                </button>
+    <div class="description">
+        <span class="glyphicon glyphicon-remove close-desc"></span>
+        <h2>About</h2>
+        <p>This website is about finding multipurpose uses for natural household items in order to minimize waste.</p>
+        <h2>Get Started</h2>
+        <p>Start your search by using "baking soda" or "vinegar". You can sign in by creating your own user account or use test@test.com and password: test123</p>
+    </div>
+                <a class="navbar-brand" href="/">
+        Multipurpose Living
+      </a>
+      <span class="glyphicon glyphicon-info-sign js-info-popout"></span>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav navbar-right loginBtn">
+                    <li>{{> loginButtons align="right"}}</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</template>
