@@ -1,25 +1,5 @@
 <!-- top level template for the nav bar -->
 <template name="navbar">
-   <!--  <nav class="navbar">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/"> Multipurpose Living</a>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right loginBtn">
-                <li><a href="about">About</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>{{> loginButtons}}</li>
-            </ul>
-        </div>
-    </nav> -->
-
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -33,7 +13,7 @@
         </div>
         <div class="navbar-collapse collapse" id="menu">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="about">About</a></li>
                 {{#if currentUser}}
                 <li><a href="profile">Profile</a></li>

@@ -1,4 +1,3 @@
-<!-- main page -->
 <template name="home">
     <div class="searchBar">
         <h1>How Can I Use</h1> 
@@ -11,13 +10,8 @@
             <div class="addData">
                 {{> addNewItem}}
             </div>
-            <!-- display all data that relates to the search -->
-            <div class="search-results">
-                <ul>
-               <!--  {{each items}}
-                    <li>Item Name: <a href="{{_id}}">{{itemName}}</a></li>
-                {{/each}} -->
-                </ul>
+            <!-- display results-->
+            <div class="results-box">
             </div>
         </div>
         {{else}}
@@ -27,13 +21,3 @@
         </div>
     {{/if}}
 </template>
-
-
-
-
-
-
-
-
-
-

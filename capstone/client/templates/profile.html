@@ -1,8 +1,23 @@
 <template name="profile">
 	<div class="container">
-		<h1>Edit Your Profile</h1>
-		<ul>
-			<li>Upload a Profile Image: <a href="#">URL</a></li>
-		</ul>
+	<h1>Profile  Information</h1>
+		<div class="row">
+		{{#each users}}
+		<div class="col-xs-12 col-sm-6">
+			<img src="{{profile.avatar}}" alt="{{profile.username}}" class="img_user">
+			<ul>
+				<li><b>Username:</b> {{profile.username}}</li>
+				<li><b>Email:</b> {{profile.username}}@test.com</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<h2>Bookmarked:</h2>
+			<p>These are lists of items you have saved for later reference.</p>
+			<ul>
+				<!-- add something here to interate over list of saved items -->
+			</ul>
+		</div>
+		{{/each}}
+		</div>
 	</div>
 </template>

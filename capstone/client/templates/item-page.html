@@ -1,9 +1,23 @@
 <!-- ItemPage -->
 <template name="itemPage">
-    <div>
-        <h2>{{itemName}}</h2>
-        <p>{{description}}</p>
-        <p>{{createdOn}}</p>
-        <p>{{createdBy}}</p>
+    <div class="container itemDesc">
+    <a href="/"><button class="btn btn-default btn-home">home</button></a>
+    	{{> home}}
+    	<div class="row">
+    	{{data}}
+	        <div class="col-xs-6">
+	        <h2>{{itemName}}</h2>
+	        	<img src="{{image}}" alt="{{itemName}}" class="center-block img-rounded">
+	        </div>
+	        <div class="col-xs-6 description">
+		       <p>{{description}}</p>
+		       Uses: 
+		       <ul>
+		       <!-- {{#each uses}}
+		       <li></li>
+		       {{/each}} -->
+		       </ul>
+	        </div>
+        </div>
     </div>
 </template>
