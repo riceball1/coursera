@@ -5,6 +5,7 @@
 
 // Starter data
 Meteor.startup(() => {
+    // Create data if there is none
     if (!Items.findOne()) {
         console.log("No data yet. Creating starter data.");
        
@@ -29,4 +30,18 @@ Meteor.startup(() => {
         if(Items.findOne()) {
             console.log("Server started up and data already loaded!");
         }
+
+    // Create users if there is none
+    if (!Meteor.users.findOne()){
+    // array for customized users for startup
+    var avatar_arr = ["guy", "girl"];
+    for (var i=0;i<avatar_arr.length;i++){
+      var email = avatar_arr[i]+"@test.com";
+      var username = avatar_arr[i];
+      // modify the avatar to iterate over four images
+      var avatar = avatar_arr[i] +".png"
+      console.log("creating a user with password 'test123' and username/ email: "+email);
+      Meteor.users.insert({profile:{username:username, avatar:avatar}, emails:[{address:email}],services:{ password:{"bcrypt" : "$2a$10$I3erQ084OiyILTv8ybtQ4ON6wusgPbMZ6.P33zzSDei.BbDL.Q4EO"}}});
+    }
+  } 
 });

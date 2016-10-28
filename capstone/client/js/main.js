@@ -1,25 +1,14 @@
 /**** HELPERS ***/
-
-Template.home.helpers({
-	'displayItems': function() {
-		return Items.find({});
+Template.navbar.helpers({
+	users: function() {
+		return Meteor.users.find();
 	}
 });
 
 
 
+
 /*** EVENTS ***/
-
-Template.navbar.events({
-    "click .js-info-popout": function() {
-        console.log("You wanted more info, here you go!");
-        $('.description').toggle(900);
-    },
-    "click .close-desc": function() {
-    	$('.description').toggle(900);
-    }
-});
-
 
 Template.addNewItem.events({
 	"click .js-open-form": function(e) {

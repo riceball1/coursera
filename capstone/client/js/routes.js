@@ -15,6 +15,26 @@ Router.route('/', function() {
 });
 
 
+// About page
+
+Router.route('about', function() {
+	this.layout('ApplicationLayout');
+	console.log("About page!");
+	this.render("navbar", { to: "nav" });
+    this.render("about", { to: "main" });
+    this.render("foot", { to: "footer" });
+});
+
+// Profile page
+
+Router.route('profile', function() {
+	this.layout('ApplicationLayout');
+	console.log("Profile page!");
+	this.render("navbar", { to: "nav" });
+    this.render("profile", { to: "main" });
+    this.render("foot", { to: "footer" });
+});
+
 
 //Individual Item Page
 

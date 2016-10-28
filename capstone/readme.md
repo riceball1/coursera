@@ -8,7 +8,9 @@ In this course, you will develop more advanced web application programming skill
 ## packages used:
 - iron:router
 - less
-- twbs
+- ian:accounts-ui-bootstrap-3
+- twbs:bootstrap
+
 
 ## Info for features:
 - Full text search in Meteor https://www.okgrow.com/posts/guide-to-full-text-search-in-meteor

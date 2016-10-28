@@ -11,61 +11,10 @@ body {
     p {
         color: @coral;
     }
-    // override login button.less
-    a {
-        text-decoration: none !important;
-    }
-    a:hover {
-        color: darkgray;
-    }
-    .glyphicon-info-sign {
-        font-size: 1.5em;
-        color: @coral;
-    }
     h1 {
         font-family: 'Raleway', serif;
     }
-    .js-info-popout {
-        padding: 10px;
-        float: left;
-    }
-    div.description {
-        position: absolute;
-        width: 400px;
-        height: auto;
-        align: left;
-        padding: 10px;
-        margin-top: 40px;
-        display: none;
-        border-radius: 5px;
-        float: left;
-        border: 3px solid @coral;
-        background-color: @litgray;
-        font-size: 15px;
-        p {
-            color: black;
-        }
-        .close-desc {
-            padding: 10px 0px 0px 0px;
-            left: 350px;
-            &:hover {
-                color: black;
-            }
-        }
-    }
-    .navbar {
-        border-bottom: 10px solid @litgray;
-        .navbar-right {
-            margin-right: 10px;
-        }
-        .glyphicon {
-            color: @coral;
-            font-size: 20px;
-        }
-    }
-    .navbar-brand {
-        padding: 10px 10px 5px 15px;
-    }
+    
 
     input {
         width: 80%;
@@ -79,10 +28,7 @@ body {
         outline: none;
         margin: 0 auto;
     }
-    .loginBtn {
-        padding: 5px;
-        margin: 10px 5px 5px 5px;
-    }
+   
     .jumbotron {
         margin: 20px auto;
         width: 80%;
@@ -118,24 +64,47 @@ body {
         .newitem-form {
             padding: 15px;
             border: 1px solid #ddd;
+            border-radius: 8px;
             margin: 5px auto;
-            width: 800px;
+            width: 85%;
             display: none;
             input {
-                width: 600px;
+                width: 90%;
                 height: 50px;
                 padding: 5px;
-                font-size: 16px;
+                font-size: 12px;
             }
             label {
-                font-size: 20px;
+                font-size: 12px;
+                margin-top: 5px;
+                margin-bottom: 5px;
             }
-}
+        }
+
+        .js-submit-form {
+            margin-top: 10px;
+        }
     }
+
 }
 
-// Add New Item Form
 
+
+
+
+ // login button
+    #login-buttons {
+        padding: 10px;
+        margin: 10px;  
+        a {
+            text-decoration: none;
+        }  
+    }
+
+ img.profile_img {
+        width: 30px;
+        height: 30px;
+    }
 
 
 
@@ -170,6 +139,9 @@ table {
     display: none;
 }
 
+
+
+// FOOTER //
 
 footer {
     background-color: @litgray;

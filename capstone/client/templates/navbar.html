@@ -1,28 +1,53 @@
 <!-- top level template for the nav bar -->
 <template name="navbar">
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">               
-                    {{> loginButtons}}
-                </button>
-    <div class="description">
-        <span class="glyphicon glyphicon-remove close-desc"></span>
-        <h2>About</h2>
-        <p>This website is about finding multipurpose uses for natural household items in order to minimize waste.</p>
-        <h2>Get Started</h2>
-        <p>Start your search by using "baking soda" or "vinegar". You can sign in by creating your own user account or use test@test.com and password: test123</p>
-    </div>
-                <a class="navbar-brand" href="/">
-        Multipurpose Living
-      </a>
-      <span class="glyphicon glyphicon-info-sign js-info-popout"></span>
-            </div>
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav navbar-right loginBtn">
-                    <li>{{> loginButtons align="right"}}</li>
-                </ul>
-            </div>
+   <!--  <nav class="navbar">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"> Multipurpose Living</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
-    </nav>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right loginBtn">
+                <li><a href="about">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>{{> loginButtons}}</li>
+            </ul>
+        </div>
+    </nav> -->
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Multipurpose</a>
+        </div>
+        <div class="navbar-collapse collapse" id="menu">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="about">About</a></li>
+                {{#if currentUser}}
+                <li><a href="profile">Profile</a></li>
+                {{/if}}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {{> loginButtons align="right"}} <!-- here -->
+                {{#if currentUser}}
+                {{#each users}}
+                <img src="{{profile.avatar}}" alt="avatar of {{profile.username}}" class="profile_img">
+                {{/each}}
+            {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
 </template>
