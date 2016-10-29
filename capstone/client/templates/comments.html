@@ -1,0 +1,43 @@
+<!-- template that displays several comments -->
+<template name="comments_list">
+<h3>Uses</h3>
+<ol>
+	{{#each comments}}
+	{{>comment_item}}
+	{{/each}}
+</ol>
+</template>
+
+<!-- template that displays individual comment entries -->
+<template name="comment_item">
+<div class="comment-box">
+	<li>
+		{{comment}}
+    <p class="comment-meta">Date: {{createdOn}} <br> by {{createdBy}}</p>
+  </li>
+  </div>
+</template>
+
+
+<!-- template form for adding comments -->
+<template name="comment_form">
+{{#if currentUser}}
+<div class="container">
+	<a class="btn btn-default btn-primary js-toggle-comment-form" href="#">
+  		Add Suggestions <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	</a>
+	</div>
+	{{else}}
+		<p>You need to be signed in to add suggestions for more uses for this item.</p>
+	{{/if}}
+<div class="hidden_div" id="comment-form">
+			<div class="container">
+	<form class="js-save-comment-form">
+		<input type="text" name="comment" placeholder="Add your comments about this website here..." id="comment-text">
+	<br>
+		<button type="submit" class="btn btn-default btn-success">Submit</button>
+	
+	</form>
+		</div>
+</div>
+</template>

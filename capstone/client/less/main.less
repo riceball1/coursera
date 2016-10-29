@@ -7,9 +7,11 @@ html {
 body {
     font-family: 'Raleway', sans-serif;
     /*margin-bottom: 60px;*/
-    a,
-    p {
+    a {
         color: @coral;
+    }
+    p {
+        color: black;
     }
     a:hover {
         text-decoration: none;
@@ -47,17 +49,18 @@ body {
     .info-divs {
         margin: 20px;
         padding: 10px;
-        .results {
-            text-align: center;
-            background-color: #ddd;
-            margin: 10px auto 0px auto;
-            width: 80%;
-        }
+        // .results {
+        //     text-align: center;
+        //     background-color: #ddd;
+        //     margin: 10px auto 0px auto;
+        //     width: 80%;
+        // }
 
         .addData {
-            margin: 10px auto 5px auto;
+            text-align: center;
             button {
-                margin-left: 30px;
+                margin: 0 auto;
+                margin-bottom: 10px;
             }
         }
 
@@ -66,6 +69,7 @@ body {
         }
 
         .newitem-form {
+            text-align: left;
             padding: 15px;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -129,17 +133,16 @@ body {
     text-align: center;
 }
 
-.results-box {
-    margin: 20px auto;
-    border-radius: 15px;
-    background-color: @litgray;
-    font-size: 16px;
-    padding: 20px;
-    width: 80%;
-    height: 80%;
-    display: none;
+.itemsListView {
+    border-top: 5px solid @babyblue;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 60px;
+    p {
+        color: black!important;
+    }
 }
-
 
 // Items Page //
 
@@ -164,6 +167,15 @@ button.btn-home {
     }
 }
 
+.commentDiv {
+    margin-bottom: 60px;
+}
+
+.item-image {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
 
 
 // FOOTER //

@@ -17,6 +17,8 @@ In this course, you will develop more advanced web application programming skill
 - Use dynamic templates: https://themeteorchef.com/snippets/using-dynamic-templates/
 - Adding comments to Meteor app: http://joshowens.me/adding-comments-to-your-meteor-js-app/
 - Simple Search: https://themeteorchef.com/snippets/simple-search/
+-Web scraping using anonyfox/scrape
+- Search http://stackoverflow.com/questions/32065984/meteor-reactive-search-bar-with-all-results-when-unfocused
 
 TODO:
 
@@ -24,3 +26,10 @@ TODO:
 2. Results page should allow clickable links to item page (render the resultsItem page?)
 3. Allow users to insert uses for the items  (use comments?)
 4. Allow users to vote on the best uses (stars?)
+
+## Known Issues:
+- Profile image next to the login button sometimes doesn't appear (reloading the page brings it back)
+    - Issue appears when going to item page and going back to home page from a button 
+- No avatar when new users create profile
+- Right indent on navbar & 
+

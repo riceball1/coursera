@@ -9,8 +9,8 @@
   {
     "itemName": "vinegar",
     "title": "Vinegar",
-    "description": "blah blah blah",
-    "uses": [],
+    "description": "Vinegar is a liquid consisting of about 5–20% acetic acid (CH3COOH), water, and other trace chemicals, which may include flavorings. The acetic acid is produced by the fermentation of ethanol by acetic acid bacteria.[1] Vinegar is now mainly used as a cooking ingredient, or in pickling. As the most easily manufactured mild acid, it has historically had a great variety of industrial, medical, and domestic uses, some of which (such as its use as a general household cleaner) are still commonly practiced today. Commercial vinegar is produced either by fast or slow fermentation processes. In general, slow methods are used with traditional vinegars, and fermentation proceeds slowly over the course of months or a year. The longer fermentation period allows for the accumulation of a nontoxic slime composed of acetic acid bacteria. Fast methods add mother of vinegar (bacterial culture) to the source liquid before adding air to oxygenate and promote the fastest fermentation. In fast production processes, vinegar may be produced in 20 hours to three days.",
+    "uses": ["Eliminate odors", "hair rinse", "remove stains from cups", "kill germs"],
     "image": "../images/vinegar.jpg"
   }
 ]

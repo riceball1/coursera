@@ -36,14 +36,6 @@ Router.route('profile', function() {
 });
 
 
-//Individual Item Page
 
-Router.route('/item/:_id', {
-	template: "itemPage",
-	data: function(){
-		var currentList = this.params._id;
-		return Items.findOne({_id: currentList});
-	}
-});
 
 

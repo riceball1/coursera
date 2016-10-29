@@ -1,17 +1,19 @@
 <template name="home">
+<div class="home">
     <div class="searchBar">
         <h1>How Can I Use</h1> 
         <form class="searchItem">
-            <input name="text" type="text" placeholder="Type your item here">
+            <input id="search" placeholder="Type your item here">
         </form>
     </div>
     {{#if currentUser}}
         <div class="info-divs">
-            <div class="addData">
+            <div class="addData center">
                 {{> addNewItem}}
             </div>
             <!-- display results-->
-            <div class="results-box">
+            <div>
+            {{> itemsList}}
             </div>
         </div>
         {{else}}
@@ -20,4 +22,25 @@
             <h1>Please Sign In or Sign Up to start using this site <span class="glyphicon glyphicon-heart"></span></h1>
         </div>
     {{/if}}
+    </div>
+</template>
+
+<template name="itemsList">
+<div class="container itemsListView">
+<div class="row">
+    {{#each items}}
+    <div class="col-xs-6">
+    <h1 class="text-center">{{itemName}}</h1>
+    <img src="{{image}}" alt="{{itemName}}" class="img-thumbnail center-block item-image">
+    <h2>Description:</h2>
+        <p>{{description}}</p>
+   <h2>Uses:</h2>
+        <p>{{uses}}</p>
+    </div>
+    <div class="col-xs-6">
+    {{> comments_list}}
+    </div>
+   {{/each}}
+    </div>
+    </div>
 </template>
