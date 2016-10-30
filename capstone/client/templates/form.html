@@ -1,12 +1,20 @@
 <!-- Add New Item Form -->
 <template name="addNewItem">
-    <button class="btn btn-primary js-open-form">Add New Item</button>
-    <div class="newitem-form">
-        <form class="newItem">
-            <label>Item Name: </label><input type='text' placeholder="Type Item Name Here">
-            <label>Description: </label><input type='text' placeholder="Type Item Description Here">
-             <label>Image URL: </label><input type='text' placeholder="Add Image URL Here">
-        </form>
-        <button class="btn btn-success js-submit-form">Submit</button>
+	{{#if currentUser}}
+   <a class="btn btn-default btn-primary js-open-form" href="#">
+  		Add New Item <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	</a>
+    {{/if}}
+    <div class="container">
+    	<div class="newitem-form">
+	        <form class="js-save-item-form newItem">
+	        	<div class="form-group">
+	            <label for="item-name">Item Name: </label><input type='text' class="form-control" id="item-name" placeholder="Type Item Name Here">
+	            </div>
+	            <label for="item-desc">Description: </label><input type='text' class="form-control" id="item-desc" placeholder="Type Item Description Here">
+	             <label for="url">Image URL: </label><input type='text' class="form-control" id="url" placeholder="Add Image URL Here">
+	             <button class="btn btn-success" type="submit">Submit</button>
+	        </form>
+    	</div>
     </div>
 </template>

@@ -75,35 +75,59 @@ Template.addNewItem.events({
 	"click .js-open-form": function(e) {
 		$('.newitem-form').toggle();
 		$('button.btn.btn-primary.js-open-form').toggleClass('open-button');
+	},
+
+	'submit .js-save-item-form': function (event){
+		// here is an example of how to get the url out of the form:
+		var itemName = event.target.itemName.value;
+		var description = event.target.description.value;
+	    var imgURL = event.target.url.value;
+	       
+	   // insert items into the database
+	  	Items.insert({
+	      itemName: itemName, 
+	      description: description, 
+	      image: imgURL, 
+	      createdOn: new Date(),
+	      createdBy: Meteor.user().username
+	    });
+	    
+	    console.log("You added to the database: ", item-name , description, imgURL);
+	    // clear form
+	    target.itemName.value = '';
+	    target.description.value = '';
+	    target.url.value = '';
+
+		 return false;// stop the form submit from reloading the page
+
 	}
 });
 
 ////////***** NEED TO FIX SUBMIT FORM ****///////
-// 	'submit .js-submit-form': function (event){
-
-// 		// here is an example of how to get the url out of the form:
-// 		var url = event.target.url.value;
-// 		var description = event.target.description.value;
-// 	    var title = event.target.title.value;
+	// 'submit .js-submit-form': function (event){
+	// 	// here is an example of how to get the url out of the form:
+	// 	var url = event.target.url.value;
+	// 	var description = event.target.description.value;
+	//     var title = event.target.title.value;
 	       
-// 	   // insert items into the database
+	//    // insert items into the database
       
-//       Items.insert({
-//           title: title, 
-//           url: url, 
-//           description: description, 
-//           createdOn: new Date(),
-//           createdBy: Meteor.user().username
-//         });
+ //      Items.insert({
+ //          title: title, 
+ //          url: url, 
+ //          description: description, 
+ //          createdOn: new Date(),
+ //          createdBy: Meteor.user().username
+ //        });
         
-//         // clear form
-//         target.url.value = '';
-//         target.description.value = '';
-//         target.title.value = '';
+ //        // clear form
+ //        target.url.value = '';
+ //        target.description.value = '';
+ //        target.title.value = '';
 
-// 			 return false;// stop the form submit from reloading the page
+	// 		 return false;// stop the form submit from reloading the page
 
-// 		}
+	// 	}
 // });
 
 // Template.home.events({
