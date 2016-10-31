@@ -1,6 +1,7 @@
 <!-- template that displays several comments -->
 <template name="comments_list">
 <h3>Uses</h3>
+{{> comment_form}}
 <ol>
 	{{#each comments}}
 	{{>comment_item}}
@@ -31,13 +32,17 @@
 		<p>You need to be signed in to add suggestions for more uses for this item.</p>
 	{{/if}}
 <div class="hidden_div" id="comment-form">
-			<div class="container">
+			<!-- <div class="container">
+			<div class="row">
+			<div class="col-xs-6"> -->
 	<form class="js-save-comment-form">
-		<input type="text" name="comment" placeholder="Add your comments about this website here..." id="comment-text">
+		<input type="text" name="comment" placeholder="Add what you can use this item for..." id="comment-text">
 	<br>
 		<button type="submit" class="btn btn-default btn-success">Submit</button>
 	
 	</form>
-		</div>
+	<!-- </div>
+	</div>
+		</div> -->
 </div>
 </template>

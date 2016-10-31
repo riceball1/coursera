@@ -19,6 +19,8 @@ In this course, you will develop more advanced web application programming skill
 - Simple Search: https://themeteorchef.com/snippets/simple-search/
 -Web scraping using anonyfox/scrape
 - Search http://stackoverflow.com/questions/32065984/meteor-reactive-search-bar-with-all-results-when-unfocused
+- Creating a form in meteor: http://meteortips.com/first-meteor-tutorial/forms/
+- Security with methods: https://www.meteor.com/tutorials/blaze/security-with-methods
 
 TODO:
 

@@ -7,12 +7,17 @@
     {{/if}}
     <div class="container">
     	<div class="newitem-form">
-	        <form class="js-save-item-form newItem">
+	        <form class="js-save-item-form newItem" id="addItemForm">
 	        	<div class="form-group">
-	            <label for="item-name">Item Name: </label><input type='text' class="form-control" id="item-name" placeholder="Type Item Name Here">
+	            <label for="item-name">Item Name: </label><input type='text' class="form-control" id="item-name" placeholder="Type Item Name Here" name="itemName">
 	            </div>
-	            <label for="item-desc">Description: </label><input type='text' class="form-control" id="item-desc" placeholder="Type Item Description Here">
-	             <label for="url">Image URL: </label><input type='text' class="form-control" id="url" placeholder="Add Image URL Here">
+	             <label for="url">Image URL: </label><input type='text' class="form-control" id="url" placeholder="Add Image URL Here" name="url">
+
+	             <!-- <label for="item-desc">Description: </label> -->
+	             <label for="item-desc">Description: </label>
+	            <textarea rows="4" cols="50" name="description" form="addItemForm" class="item-desc" placeholder="enter description here ...">
+</textarea>
+
 	             <button class="btn btn-success" type="submit">Submit</button>
 	        </form>
     	</div>
