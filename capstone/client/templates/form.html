@@ -9,17 +9,25 @@
     	<div class="newitem-form">
 	        <form class="js-save-item-form newItem" id="addItemForm">
 	        	<div class="form-group">
-	            <label for="item-name">Item Name: </label><input type='text' class="form-control" id="item-name" placeholder="Type Item Name Here" name="itemName">
+	            <label for="item-name">Item Name: </label><input type='text' class="form-control" id="item-name" placeholder="Type Item Name Here" name="itemName" required>
 	            </div>
-	             <label for="url">Image URL: </label><input type='text' class="form-control" id="url" placeholder="Add Image URL Here" name="url">
+	             <label for="url">Image URL: </label><input type='text' class="form-control" id="url" placeholder="Add Image URL Here" name="url" required>
 
 	             <!-- <label for="item-desc">Description: </label> -->
 	             <label for="item-desc">Description: </label>
-	            <textarea rows="4" cols="50" name="description" form="addItemForm" class="item-desc" placeholder="enter description here ...">
+	            <textarea rows="4" cols="50" name="description" form="addItemForm" class="item-desc" placeholder="enter description here ..." required>
 </textarea>
 
 	             <button class="btn btn-success" type="submit">Submit</button>
 	        </form>
     	</div>
     </div>
+  
+<div class="modal js-success-modal" tabindex="-1" role="dialog" id="success-modal" aria-labelledby="sucess-modal">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content success-content">
+      <p>Added Item Successfully!</p>
+    </div>
+  </div>
+</div>
 </template>

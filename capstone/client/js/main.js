@@ -76,8 +76,8 @@ Template.addNewItem.events({
 	    // target.url.value = '';
 
 	    document.getElementById("addItemForm").reset();
-		console.log('form submitted');
-
+		$('#success-modal').modal('show');
+		$('.js-open-form').click();
 
 
 	}
